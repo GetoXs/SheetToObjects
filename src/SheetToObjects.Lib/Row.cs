@@ -18,7 +18,12 @@ namespace SheetToObjects.Lib
 
         public Cell GetCellByColumnIndex(int columnIndex)
         {
-            return Cells.FirstOrDefault(c =>c.ColumnIndex == columnIndex);
+            return Cells.FirstOrDefault(c => c.ColumnIndex == columnIndex);
+        }
+
+        public List<object> ToRowData()
+        {
+            return Cells.Select(c => c.Value).ToList();
         }
     }
 }

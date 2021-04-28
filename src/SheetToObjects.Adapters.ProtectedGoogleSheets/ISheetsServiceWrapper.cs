@@ -5,6 +5,8 @@ namespace SheetToObjects.Adapters.ProtectedGoogleSheets
 {
     public interface ISheetsServiceWrapper
     {
-        Task<ValueRange> Get(string sheetId, string range);
+        Task<ValueRange> Get(string spreadsheetId, string range);
+        Task<AppendValuesResponse> Append(ValueRange body, string spreadsheetId, string range);
+
     }
 }
